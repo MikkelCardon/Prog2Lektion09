@@ -12,8 +12,10 @@ public class Main {
     }
 
     private static double avarageMajorDiagonal(double[][] input) {
-        return 0;
+        double sum = 0;
+        for (int i = 0; i < input[0].length; i++) {
+            sum+= input[i][i];
+        }
+        return sum / input[0].length;
     }
-
-
 }
