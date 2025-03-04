@@ -12,6 +12,20 @@ public class Main {
     }
 
     private static int[] locateSmallest(double[][] input) {
-        return new int[]{0, 0};
+        double smallestNumber = input[0][0];
+        int x = 0;
+        int y = 0;
+
+        for (int outer = 0; outer < input.length; outer++) {
+            for (int inner = 0; inner < input[outer].length; inner++) {
+                if (input[outer][inner] < smallestNumber){
+                    smallestNumber = input[outer][inner];
+                    x = inner;
+                    y = outer;
+                }
+            }
+        }
+
+        return new int[]{y, x};
     }
 }
